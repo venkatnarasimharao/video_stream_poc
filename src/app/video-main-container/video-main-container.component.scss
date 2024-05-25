@@ -1,0 +1,12 @@
+.main-content {
+    width: calc(100% - 320px);
+    margin-left: auto;
+    display: block;
+    padding: 80px 24px 62px;
+    transition: all .3s ease-in-out;
+    position: relative;
+    .inner-main {
+        max-width: 800px;
+        margin: auto;
+    }
+}
