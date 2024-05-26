@@ -1,11 +1,12 @@
 .side-menu {
     width: 200px;
-    background-color: #f0f0f0;
+    background-color: #e0e0e0;
+    border: solid 1px #e6e6e627;
     padding: 20px;
     position: fixed;
-    top: 110px;
+    top: 70px;
     left: 0;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
 
     ul {
@@ -30,6 +31,7 @@
 
             .about-info-img {
                 width: 100%;
+                height: 150px;
                 overflow: hidden;
                 display: block;
                 border-radius: 4px;;

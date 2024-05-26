@@ -3,9 +3,9 @@
         <li *ngFor="let obj of videoData;">
             <div class="about-info-img" (click)="navigateImg(obj)">
                 <img [src]="'https://d2c6supkhungkj.cloudfront.net/'+obj.name + '/' +obj?.posterImage" alt="">
-                <!-- <a class="play-icon" href="https://d2c6supkhungkj.cloudfront.net/sample-1/sample-1.jpg" data-fancybox="gallery">
+                <a class="play-icon" href="javascript:void(0)" data-fancybox="gallery">
                     <i class="far fa-play"></i>
-                </a> -->
+                </a>
             </div>
     </ul>
 </nav>

@@ -3,12 +3,13 @@
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
 </div>
 <div style="text-align: center;" class="main-content">
-<h2>Welcome:{{videoSrc}}</h2>
-<video #videoPlayer width="700px" height="400px" controls>
-    <source [src]="videoSrc" type="video/mp4"/>
-</video>
-<button (click)="downloadResource(videoSrc)">
-    download me
-</button>
+    <h2>Welcome:{{videoSrc}}</h2>
+    <video #videoPlayer width="700px" height="400px" controls>
+        <source [src]="videoSrc" type="video/mp4" />
+    </video>
+    <div class="video-footer">
+        <button (click)="downloadResource(videoSrc)" class="download-btn">
+            Download
+        </button>
+    </div>
 </div>
- 
