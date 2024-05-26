@@ -11,5 +11,8 @@
 <video #videoPlayer width="700px" height="400px" controls>
     <source [src]="videoSrc" type="video/mp4"/>
 </video>
+<button (click)="downloadResource(videoSrc)">
+    download me
+</button>
 </div>
  
