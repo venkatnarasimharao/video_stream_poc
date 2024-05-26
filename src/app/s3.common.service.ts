@@ -19,8 +19,5 @@ export class S3CommonService {
       console.log(err);
       return err;
     }
-    
   }
-
-
 }
