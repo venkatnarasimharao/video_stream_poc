@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { VideoMainContainerComponent } from './video-main-container/video-main-container.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidemenuComponent,
-    VideoMainContainerComponent
+    VideoMainContainerComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
