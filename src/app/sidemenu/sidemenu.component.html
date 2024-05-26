@@ -1,84 +1,11 @@
 <nav class="side-menu">
     <ul>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
+        <li *ngFor="let obj of videoData;">
+            <div class="about-info-img" (click)="navigateImg(obj)">
+                <img [src]="'https://d2c6supkhungkj.cloudfront.net/'+obj.name + '/' +obj?.posterImage" alt="">
+                <!-- <a class="play-icon" href="https://d2c6supkhungkj.cloudfront.net/sample-1/sample-1.jpg" data-fancybox="gallery">
                     <i class="far fa-play"></i>
-                </a>
+                </a> -->
             </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/KhnVcAC5bIM/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/KhnVcAC5bIM" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
-        <li>
-            <div class="about-info-img">
-                <img src="https://img.youtube.com/vi/1Qd6ZVpWMpI/0.jpg" alt="">
-                <a class="play-icon" href="https://www.youtube.com/embed/1Qd6ZVpWMpI" data-fancybox="gallery">
-                    <i class="far fa-play"></i>
-                </a>
-            </div>
-        </li>
     </ul>
 </nav>

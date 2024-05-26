@@ -1,11 +1,15 @@
+
+<!-- <ng-container *ngIf="videoData">
+  <app-sidemenu [videoData]="videoData"></app-sidemenu>
+</ng-container> -->
+
 <div>
-    <app-sidemenu></app-sidemenu>
+    <app-sidemenu [videoData]="s3Obj" (notify)="onNotify($event)"></app-sidemenu>
 </div>
-<div class="main-content">
-    <div class="about-info-img">
-        <iframe width="100%" height="500vh" src="https://www.youtube.com/embed/1Qd6ZVpWMpI?si=v__Y-c-v4ZSc77bQ"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
+<div style="text-align: center;" class="main-content">
+<h2>Welcome:{{videoSrc}}</h2>
+<video #videoPlayer width="700px" height="400px" controls>
+    <source [src]="videoSrc" type="video/mp4"/>
+</video>
 </div>
+ 
