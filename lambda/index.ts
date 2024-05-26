@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 
 exports.handler = async (event) => {
-  console.log('S3 EVENT:', JSON.stringify(event));
+  console.log('S3 EVENT:::', JSON.stringify(event));
   // Configure S3 client (replace region if needed)
   const s3 = new AWS.S3({ apiVersion: '2006-03-01' });
 
