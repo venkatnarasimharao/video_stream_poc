@@ -4,15 +4,15 @@ import { VideoMainContainerComponent } from './video-main-container/video-main-c
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: VideoMainContainerComponent,
     // canActivate: [AuthGuard]
   },
-  {
-    path: '**',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ export class VideoMainContainerComponent implements OnInit {
   files: string[] = [];
   bucketName = 'video-storage-poc-tricon';
   videoData: any = [];
-  videoSrc = 'https://d2c6supkhungkj.cloudfront.net/POC_DATA/sample-1/sample-1.mp4';
+  videoSrc = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/rom/rom.mp4';
   videoName = 'sample-1.mp4';
   @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
   constructor(private s3Service: S3CommonService) { }
@@ -28,7 +28,7 @@ export class VideoMainContainerComponent implements OnInit {
   updateVideo(newFolderName: string, newVideo: string) {
     console.log('video old::', this.videoSrc);
     this.videoName = newVideo
-    this.videoSrc = `https://d2c6supkhungkj.cloudfront.net/POC_DATA/${newFolderName}/${newVideo}`;
+    this.videoSrc = `https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/${newFolderName}/${newVideo}`;
     console.log('video new::', this.videoSrc);
     this.reloadVideo();
   }
