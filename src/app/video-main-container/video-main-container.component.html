@@ -3,7 +3,7 @@
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
 </div>
 <div style="text-align: center;" class="main-content">
-    <h2>Watch:{{videoSrc}}</h2>
+    <h2>Watch:{{videoName}}</h2>
     <video #videoPlayer width="700px" height="400px" controls>
         <source [src]="videoSrc" type="video/mp4" />
     </video>
