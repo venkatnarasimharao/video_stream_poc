@@ -1,6 +1,10 @@
+.background {
+    background-color: #f7f7f7;
+}
 .main-content {
-    width: calc(100% - 423px);
+    width: 73%;
     margin-left: auto;
+    height: 80vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -8,7 +12,6 @@
     padding: 80px 24px 62px;
     transition: all .3s ease-in-out;
     position: relative;
-    background-color: #f7f7f7;
     
     h2{
         color:#007a96;

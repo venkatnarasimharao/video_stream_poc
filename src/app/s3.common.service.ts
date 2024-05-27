@@ -11,7 +11,7 @@ export class S3CommonService {
 
   async getVideoUrl() {
     try {
-      const response = await axios.get('https://video-poc-ubx.s3.amazonaws.com/video-data.json', {
+      const response = await axios.get('https://d3ngc5oa7eval3.cloudfront.net/video-data.json', {
         responseType: 'json'
       });
       return response.data;

@@ -1,15 +1,15 @@
 <app-header></app-header>
-<div>
+<div class="background">
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
-</div>
-<div style="text-align: center;" class="main-content">
-    <h2>{{videoName}}</h2>
-    <video #videoPlayer width="700px" height="400px" controls>
-        <source [src]="videoSrc" type="video/mp4" />
-    </video>
-    <span class="video-footer">
-        <button (click)="downloadResource(videoSrc)" class="download-btn">
-            Download
-        </button>
-    </span>
+    <div style="text-align: center;" class="main-content">
+        <h2>{{videoName}}</h2>
+        <video #videoPlayer width="700px" height="400px" controls>
+            <source [src]="videoSrc" type="video/mp4" />
+        </video>
+        <span class="video-footer">
+            <button (click)="downloadResource(videoSrc)" class="download-btn">
+                Download
+            </button>
+        </span>
+    </div>
 </div>
