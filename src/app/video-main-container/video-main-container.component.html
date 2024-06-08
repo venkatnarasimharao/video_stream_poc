@@ -1,15 +1,17 @@
 <app-header></app-header>
-<div>
+<div class="main-container">
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
-</div>
-<div style="text-align: center;" class="main-content">
-    <h2>Watch:{{videoName}}</h2>
-    <video #videoPlayer width="700px" height="400px" controls>
-        <source [src]="videoSrc" type="video/mp4" />
-    </video>
-    <div class="video-footer">
-        <button (click)="downloadResource(videoSrc)" class="download-btn">
-            Download
-        </button>
+    <div style="text-align: center;" class="main-content">
+        <h2>{{videoName}}</h2>
+        <video #videoPlayer width="700px" height="400px" controls>
+            <source [src]="videoSrc" type="video/mp4" />
+        </video>
+        <span class="video-footer">
+            <button (click)="downloadResource(videoSrc)" class="download-btn">
+                Download
+            </button>
+        </span>
+        <app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage" (onClick)="changePage($event)"></app-pagination>
     </div>
-</div>
+    </div>
+    <app-video-stream-list></app-video-stream-list>

@@ -1,0 +1,8 @@
+<div class="video-grid">
+    <div class="video-item" *ngFor="let video of videoList">
+        <video #videoPlayer width="90%" height="95%" controls>
+            <source [src]="video.videoUrl" type="video/mp4" />
+        </video>
+        <div class="video-title">{{ video.name }}</div>
+    </div>
+</div>
