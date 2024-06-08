@@ -10,7 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { VideoStreamListComponent } from './video-stream-list/video-stream-list.component';
 @NgModule({
     declarations: [
         AppComponent,
