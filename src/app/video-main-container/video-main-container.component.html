@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="main-container">
+<!-- <div class="main-container">
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
     <div style="text-align: center;" class="main-content">
         <h2>{{videoName}}</h2>
@@ -11,7 +11,9 @@
                 Download
             </button>
         </span>
-        <app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage" (onClick)="changePage($event)"></app-pagination>
+       
     </div>
-    </div>
-    <app-video-stream-list></app-video-stream-list>
+    </div> -->
+<app-video-stream-list></app-video-stream-list>
+<app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"
+    (onClick)="changePage($event)"></app-pagination>

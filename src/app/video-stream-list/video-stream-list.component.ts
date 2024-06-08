@@ -1,12 +1,58 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-stream-list',
   templateUrl: './video-stream-list.component.html',
-  styleUrls: ['./video-stream-list.component.scss']
+  styleUrls: ['./video-stream-list.component.scss'],
+  animations: [
+    trigger('changeState', [
+      transition(':enter', [
+        style({
+          top: '50%',
+          right: '50%',
+          bottom: '50%',
+          left: '50%',
+          backgroundColor: '#34383c',
+        }),
+        animate(
+          '0.3s ease-out',
+          style({
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            backgroundColor: '#000000db',
+          })
+        ),
+      ]),
+      transition(':leave', [
+        style({
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+          backgroundColor: '#000000db',
+        }),
+        animate(
+          '0.3s ease-in',
+          style({
+            top: '50%',
+            right: '50%',
+            bottom: '50%',
+            left: '50%',
+            backgroundColor: '#34383c',
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class VideoStreamListComponent implements OnInit {
   videoList:any;
+  showVideoPopup: boolean = false;
+  showVideoPopupContainer: boolean = false;
+  videoData: any = {};
 
   ngOnInit(): void {
       this.videoList = [
@@ -60,4 +106,17 @@ export class VideoStreamListComponent implements OnInit {
         },
       ]
   }
+
+  endState() {
+    this.showVideoPopupContainer = true;
+  }
+
+  playVideo(value, data?) {
+    if (data) {
+      this.videoData = data;
+    }
+    this.showVideoPopup = value;
+    
+  }
+
 }
