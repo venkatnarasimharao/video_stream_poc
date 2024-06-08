@@ -1,7 +1,7 @@
 <app-header></app-header>
-<div class="background">
+<div class="main-container">
     <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
-    <div style="text-align: center;" class="main-content">
+    <!-- <div style="text-align: center;" class="main-content">
         <h2>{{videoName}}</h2>
         <video #videoPlayer width="700px" height="400px" controls>
             <source [src]="videoSrc" type="video/mp4" />
@@ -11,5 +11,6 @@
                 Download
             </button>
         </span>
-    </div>
+    </div> -->
+    <app-video-stream-list></app-video-stream-list>
 </div>
