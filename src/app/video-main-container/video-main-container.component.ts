@@ -12,8 +12,8 @@ export class VideoMainContainerComponent implements OnInit {
   bucketName = 'video-storage-poc-tricon';
   videoData: any = [];
   videoSrc = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/rom/rom.mp4';
-  videoName :string =  '';
-  
+  videoName: string = '';
+
   @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
   constructor(private s3Service: S3CommonService) { }
 
@@ -66,5 +66,22 @@ export class VideoMainContainerComponent implements OnInit {
         this.forceDownload(blobUrl, filename);
       })
       .catch(e => console.error(e));
+  }
+
+  // Pagination code
+  totalItems = 100;
+  itemsPerPage = 10;
+  currentPage = 1;
+
+  data = [];
+
+  get paginatedData() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+
+    return this.data.slice(start, end);
+  }
+  changePage(page: number) {
+    this.currentPage = page;
   }
 }
