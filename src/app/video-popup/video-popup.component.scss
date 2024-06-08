@@ -1,0 +1,53 @@
+
+.video-popup-container {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000db;
+  padding: 30px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  .video-popup-sub-container {
+    max-width: 1600px;
+    width: 100%;
+    .cross {
+      width: 33px;
+      height: 33px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      border: 0;
+      cursor: pointer;
+      .icon-cancel {
+        font-weight: bold;
+        font-size: 20px;
+        color: #000000;
+      }
+    }
+    .video-popup-header {
+      height: 30px;
+      margin-top: 40px;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.16px;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    .video-section {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

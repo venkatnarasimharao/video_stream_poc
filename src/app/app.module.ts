@@ -8,6 +8,7 @@ import { VideoMainContainerComponent } from './video-main-container/video-main-c
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { VideoPopupComponent } from './video-popup/video-popup.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     SidemenuComponent,
     VideoMainContainerComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    VideoPopupComponent
   ],
   imports: [
     BrowserModule,

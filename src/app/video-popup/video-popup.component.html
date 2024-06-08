@@ -1,0 +1,17 @@
+<div (click)="closeModal($event)" class="video-popup-container" cdkTrapFocus>
+  <div class="video-popup-sub-container">
+    <button aria-label="Close Button" (click)="closeModal()" class="cross">
+      <span class="material-symbols-outlined">
+        close
+      </span>
+    </button>
+    <h2 [attr.aria-label]="heading" class="video-popup-header">
+      {{ heading }}
+    </h2>
+    <div class="video-section">
+      <video #videoPlayer width="700px" height="400px" controls>
+        <source [src]="videoSrc" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+</div>
