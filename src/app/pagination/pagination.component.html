@@ -22,19 +22,16 @@
 </nav> -->
 
 
-<div id="app" class="container">  
+<div id="app" class="container">
   <ul class="page">
-      <li class="page__btn active"><span class="material-icons">keyboard_double_arrow_left</span></li>
-      <li class="page__btn active"><span class="material-icons">chevron_left</span></li>
-      <li class="page__numbers"> 1</li>
-      <li class="page__numbers active">2</li>
-      <li class="page__numbers">3</li>
-      <li class="page__numbers">4</li>
-      <li class="page__numbers">5</li>
-      <li class="page__numbers">6</li>
-      <li class="page__dots">...</li>
-      <li class="page__numbers"> 10</li>
-      <li class="page__btn"><span class="material-icons">chevron_right</span></li>
-      <li class="page__btn"><span class="material-icons">keyboard_double_arrow_right</span></li>
-    </ul>
-  </div>
+    <li class="page__btn active" (click)="pageClicked(1)"><span class="material-icons">keyboard_double_arrow_left</span></li>
+    <li class="page__btn active" (click)="pageClicked(currentPage-1)"><span class="material-icons">chevron_left</span>
+    </li>
+    <li class="page__numbers" (click)="pageClicked(page)" *ngFor="let page of pages"
+      [ngClass]="{'active' : page == currentPage}">
+      {{page}}
+    </li>
+    <li class="page__btn" (click)="pageClicked(currentPage+1)"><span class="material-icons">chevron_right</span></li>
+    <li class="page__btn" (click)="pageClicked(totalPages)"><span class="material-icons">keyboard_double_arrow_right</span></li>
+  </ul>
+</div>
