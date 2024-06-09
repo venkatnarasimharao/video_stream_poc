@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div>
-    <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu>
+    <!-- <app-sidemenu [videoData]="videoData" (notify)="onNotify($event)"></app-sidemenu> -->
+      <app-video-stream-list></app-video-stream-list>
 </div>
 <div style="text-align: center;" class="main-content">
     <h2>Watch:{{videoName}}</h2>

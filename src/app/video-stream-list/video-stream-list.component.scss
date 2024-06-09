@@ -1,0 +1,49 @@
+.side-menu {
+    // width: 200px;
+    background-color: #e0e0e0;
+    border: solid 1px #e6e6e627;
+    padding: 20px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+
+    background-color: #d9edf7;;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    .navbar-default {
+        border: none;
+        background-color: #d9edf7;
+        margin-bottom: 0;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+            color: #084a63;
+            font-weight: bold;
+            background: #c5e0ed;
+            margin: 6px 0px;
+            font-size: 0.9em;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    }
+
+    .pull-right {
+        float: right;
+    }
+    .icon-default{
+        color: #fff;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+}
