@@ -1,0 +1,21 @@
+<!-- <mat-paginator [length]="100"
+              [pageSize]="10"
+              [showFirstLastButtons]="true"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              [pageIndex]="currentPage"
+              (page)="handlePageEvent($event)"
+              >
+</mat-paginator> -->
+<nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === 1}">
+        <a class="page-link" (click)="pageClicked(currentPage-1)">Previous</a>
+      </li>
+      <li (click)="pageClicked(page)" *ngFor="let page of pages" class="page-item" [ngClass]="{'active' : page == currentPage}">
+        <a class="page-link" href="#">{{page}}</a>
+      </li>
+      <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === totalPages}">
+        <a class="page-link" (click)="pageClicked(currentPage + 1)">Next</a>
+      </li>
+    </ul>
+  </nav>
