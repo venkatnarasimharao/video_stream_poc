@@ -10,7 +10,7 @@
       <!-- <video #videoPlayer width="90%" height="95%" controls>
             <source [src]="video.videoUrl" type="video/mp4" />
         </video> -->
-      <div class="video-title">{{ video.name }}</div>
+      <div class="video-name">{{ video.name }}</div>
     </div>
     <div *ngIf="showVideoPopup" [@changeState] (@changeState.done)="endState()" class="video-popup">
       <app-video-popup [heading]="videoData.name" [videoSrc]="videoData.videoUrl" *ngIf="showVideoPopupContainer"

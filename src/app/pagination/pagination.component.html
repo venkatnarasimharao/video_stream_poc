@@ -31,6 +31,9 @@
       [ngClass]="{'active' : page == currentPage}">
       {{page}}
     </li>
+    <li class="page__numbers">
+      ...
+    </li>
     <li class="page__btn" (click)="pageClicked(currentPage+1)"><span class="material-icons">chevron_right</span></li>
     <li class="page__btn" (click)="pageClicked(totalPages)"><span class="material-icons">keyboard_double_arrow_right</span></li>
   </ul>
