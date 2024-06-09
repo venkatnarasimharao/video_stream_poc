@@ -1,22 +1,16 @@
 <div class="video-grid">
-    <div class="video-item" (click)="playVideo(true, video)" *ngFor="let video of videoList">
-        <video #videoPlayer width="90%" height="95%" controls>
+  <div class="video-item" (click)="playVideo(true, video)" *ngFor="let video of videoList">
+    <img [src]="video.videoSrc" alt="" width="90%" height="95%">
+    <a class="play-icon" href="javascript:void(0)" data-fancybox="gallery">
+      <i class="far fa-play"></i>
+    </a>
+    <!-- <video #videoPlayer width="90%" height="95%" controls>
             <source [src]="video.videoUrl" type="video/mp4" />
-        </video>
-        <div class="video-title">{{ video.name }}</div>
-    </div>
-    <div
-    *ngIf="showVideoPopup"
-    [@changeState]
-    (@changeState.done)="endState()"
-    class="video-popup"
-  >
-    <app-video-popup
-      [heading]="videoData.name"
-      [videoSrc]="videoData.videoUrl"
-      *ngIf="showVideoPopupContainer"
-      (closePopup)="playVideo($event)"
-    ></app-video-popup>
+        </video> -->
+    <div class="video-title">{{ video.name }}</div>
+  </div>
+  <div *ngIf="showVideoPopup" [@changeState] (@changeState.done)="endState()" class="video-popup">
+    <app-video-popup [heading]="videoData.name" [videoSrc]="videoData.videoUrl" *ngIf="showVideoPopupContainer"
+      (closePopup)="playVideo($event)"></app-video-popup>
   </div>
 </div>
-

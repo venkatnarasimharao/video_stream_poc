@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import {MatPaginatorModule} from '@angular/material/paginator';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
@@ -12,27 +11,28 @@ import { PaginationComponent } from './pagination/pagination.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VideoStreamListComponent } from './video-stream-list/video-stream-list.component';
 import { VideoPopupComponent } from './video-popup/video-popup.component';
+import { S3CommonService } from './s3.common.service';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        SidemenuComponent,
-        VideoMainContainerComponent,
-        HeaderComponent,
-        FooterComponent,
-        PaginationComponent,
-        VideoPopupComponent,
-        VideoStreamListComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        // MatPaginatorModule,
-        BrowserAnimationsModule
-    ]
+  declarations: [
+    AppComponent,
+    SidemenuComponent,
+    VideoMainContainerComponent,
+    HeaderComponent,
+    FooterComponent,
+    PaginationComponent,
+    VideoPopupComponent,
+    VideoStreamListComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [S3CommonService],
+  bootstrap: [
+    AppComponent
+  ],
 })
 export class AppModule { }

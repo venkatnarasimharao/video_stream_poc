@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './video-popup.component.html',
   styleUrls: ['./video-popup.component.scss']
 })
-export class VideoPopupComponent implements OnInit {
+export class VideoPopupComponent implements OnInit, OnChanges {
 
   @Output() closePopup = new EventEmitter();
   @Input() videoSrc: any = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/rom/rom.mp4';
@@ -18,6 +18,10 @@ export class VideoPopupComponent implements OnInit {
         this.closePopup.emit(false);
       }
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log(this.videoSrc, 'check this out')
   }
 
   closeModal($event?) {

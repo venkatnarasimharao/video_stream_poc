@@ -6,16 +6,33 @@
               (page)="handlePageEvent($event)"
               >
 </mat-paginator> -->
-<nav aria-label="...">
-    <ul class="pagination">
-      <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === 1}">
-        <a class="page-link" (click)="pageClicked(currentPage-1)">Previous</a>
-      </li>
-      <li (click)="pageClicked(page)" *ngFor="let page of pages" class="page-item" [ngClass]="{'active' : page == currentPage}">
-        <a class="page-link" href="#">{{page}}</a>
-      </li>
-      <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === totalPages}">
-        <a class="page-link" (click)="pageClicked(currentPage + 1)">Next</a>
-      </li>
+<!-- <nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === 1}">
+      <a class="page-link" (click)="pageClicked(currentPage-1)">Previous</a>
+    </li>
+    <li (click)="pageClicked(page)" *ngFor="let page of pages" class="page-item"
+      [ngClass]="{'active' : page == currentPage}">
+      <a class="page-link" href="#">{{page}}</a>
+    </li>
+    <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === totalPages}">
+      <a class="page-link" (click)="pageClicked(currentPage + 1)">Next</a>
+    </li>
+  </ul>
+</nav> -->
+
+
+<div id="app" class="container">  
+  <ul class="page">
+      <li class="page__btn active"><span class="material-icons">chevron_left</span></li>
+      <li class="page__numbers"> 1</li>
+      <li class="page__numbers active">2</li>
+      <li class="page__numbers">3</li>
+      <li class="page__numbers">4</li>
+      <li class="page__numbers">5</li>
+      <li class="page__numbers">6</li>
+      <li class="page__dots">...</li>
+      <li class="page__numbers"> 10</li>
+      <li class="page__btn"><span class="material-icons">chevron_right</span></li>
     </ul>
-  </nav>
+  </div>

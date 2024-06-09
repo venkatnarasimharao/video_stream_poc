@@ -14,6 +14,10 @@
        
     </div>
     </div> -->
-<app-video-stream-list></app-video-stream-list>
-<app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"
-    (onClick)="changePage($event)"></app-pagination>
+<div class="main-container">
+    <app-video-stream-list>
+    </app-video-stream-list>
+    <app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"
+        (onClick)="changePage($event)">
+    </app-pagination>
+</div>
