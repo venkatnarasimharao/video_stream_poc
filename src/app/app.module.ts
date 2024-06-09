@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { VideoStreamListComponent } from './video-stream-list/video-stream-list.component';
+import { ReplaceUnderscorePipe } from './replace-underscore.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { VideoStreamListComponent } from './video-stream-list/video-stream-list.
     VideoMainContainerComponent,
     HeaderComponent,
     FooterComponent,
-    VideoStreamListComponent
+    VideoStreamListComponent,
+    ReplaceUnderscorePipe
   ],
   imports: [
     BrowserModule,

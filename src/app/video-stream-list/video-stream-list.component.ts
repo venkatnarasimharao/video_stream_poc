@@ -26,7 +26,6 @@ export class VideoStreamListComponent implements OnInit {
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
     console.log('saveVideoStream method with::', dataSet, ' key:',key);
     this.videostreamService.saveCurrVideoItemArr(dataSet);
-    this.toggleExpand(key);
   }
 
   hasSubItems(obj: VideoItem): boolean {
@@ -35,6 +34,8 @@ export class VideoStreamListComponent implements OnInit {
   }
 
   toggleExpand(key: string): void {
+    console.log('toggleExpand::::::::::::',key);
+    
     if (this.expandedKey === key) {
       this.expandedKey = null;
     } else {
