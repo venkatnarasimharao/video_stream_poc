@@ -13,7 +13,12 @@ export class VideoMainContainerComponent implements OnInit {
   videoData: any = [];
   videoSrc = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/rom/rom.mp4';
   videoName: string = '';
-
+  // Pagination code
+  totalItems = 100;
+  itemsPerPage = 10;
+  currentPage = 1;  
+  data = [];
+  
   @ViewChild('videoPlayer') videoPlayer: ElementRef | undefined;
   constructor(private s3Service: S3CommonService) { }
 
@@ -67,13 +72,6 @@ export class VideoMainContainerComponent implements OnInit {
       })
       .catch(e => console.error(e));
   }
-
-  // Pagination code
-  totalItems = 100;
-  itemsPerPage = 10;
-  currentPage = 1;
-
-  data = [];
 
   get paginatedData() {
     const start = (this.currentPage - 1) * this.itemsPerPage;
