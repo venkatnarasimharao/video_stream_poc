@@ -54,7 +54,7 @@ export class VideoStreamListComponent implements OnInit {
   showVideoPopupContainer: boolean = false;
   videoData: any = {};
   // https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4
-
+  
   ngOnInit(): void {
     this.videoList = [
       {
@@ -131,5 +131,5 @@ export class VideoStreamListComponent implements OnInit {
     this.showVideoPopup = value;
 
   }
-
+  
 }
