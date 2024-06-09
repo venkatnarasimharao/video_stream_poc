@@ -6,58 +6,59 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-stream-list.component.scss']
 })
 export class VideoStreamListComponent implements OnInit {
-  videoList:any;
+  videoList: any;
+  // https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4
 
   ngOnInit(): void {
-      this.videoList = [
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-        {
-          name: 'Asian Blepharoplasty',
-          videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-        },
-      ]
+    this.videoList = [
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+      {
+        name: 'Asian Blepharoplasty',
+        videoUrl: 'assets/img.jpg'
+      },
+    ]
   }
 }
