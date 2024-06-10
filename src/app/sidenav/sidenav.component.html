@@ -8,18 +8,18 @@
       </li>
       <li *ngFor="let firstLevelObj of videoData; let i = index">
         <ng-container *ngIf="firstLevelObj.key">
-          <div *ngIf="firstLevelObj?.items?.length && !firstLevelObj?.items[0].path" (click)="toggleExpand(firstLevelObj.key)">
+          <div *ngIf="firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length" (click)="toggleExpand(firstLevelObj.key)">
             <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
             <i class="fa fa-chevron-right pull-right icon-default"></i>
           </div>
-          <div *ngIf="firstLevelObj?.items?.length && firstLevelObj?.items[0].path" (click)="saveVideoStream(firstLevelObj, firstLevelObj.key) ; toggleExpand(firstLevelObj.key)">
+          <div *ngIf="firstLevelObj?.items?.length && !firstLevelObj?.items[0].items?.length" (click)="saveVideoStream(firstLevelObj, firstLevelObj.key) ; toggleExpand(firstLevelObj.key)">
             <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
             <i class="fa fa-chevron-right pull-right icon-default"></i>
           </div>
         </ng-container>
-        <ng-container *ngIf="expandedKey === firstLevelObj.key && firstLevelObj?.items?.length && !firstLevelObj?.items[0].path">
+        <ng-container *ngIf="expandedKey === firstLevelObj.key && firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length">
           <ul class="secondLevel-default">
-            <li (click)="saveVideoStream(firstLevelObj, 'All')">
+            <li (click)="saveVideoStream(firstLevelObj.items, 'All')">
               <span>All</span>
               <i class="fa fa-chevron-right pull-right icon-default"></i>
             </li>

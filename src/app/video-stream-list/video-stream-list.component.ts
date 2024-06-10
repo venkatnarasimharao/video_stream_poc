@@ -142,6 +142,7 @@ export class VideoStreamListComponent implements OnInit {
   }
 
   showAllData(data) {
+    console.log('kjsdbcsdc', data);
     data.forEach(item => {
       if (item.path) {
         this.videoList.push(item);
