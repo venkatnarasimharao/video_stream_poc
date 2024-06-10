@@ -24,11 +24,24 @@ export class SidenavComponent implements OnInit {
 
   async ngOnInit() {
     this.videoData = await this.s3Service.getVideoUrl();
-    this.change.emit('all');
+    const data = {
+      value: 'all',
+      videoData: this.videoData
+    }
+    this.change.emit(data);
   }
 
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
-    this.change.emit(dataSet);
+    if (key) {
+      const data = {
+        value: 'all',
+        videoData: dataSet
+      }
+      this.change.emit(data);
+    } else {
+      this.change.emit(dataSet);
+    }
+    
   }
 
   toggleExpand(key: string): void {
