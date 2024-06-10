@@ -24,11 +24,16 @@ export class SidenavComponent implements OnInit {
 
   async ngOnInit() {
     this.videoData = await this.s3Service.getVideoUrl();
-    const data = {
-      value: 'all',
-      videoData: this.videoData
+    if (sessionStorage.getItem('activeData')) {
+      const data = JSON.parse(sessionStorage.getItem('activeData'));
+      this.change.emit(data);
+    } else {
+      const data = {
+        value: 'all',
+        videoData: this.videoData
+      }
+      this.change.emit(data);
     }
-    this.change.emit(data);
   }
 
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
@@ -37,11 +42,12 @@ export class SidenavComponent implements OnInit {
         value: 'all',
         videoData: dataSet
       }
+      sessionStorage.setItem('activeData', JSON.stringify(data));
       this.change.emit(data);
     } else {
+      sessionStorage.setItem('activeData', JSON.stringify(dataSet))
       this.change.emit(dataSet);
     }
-    
   }
 
   toggleExpand(key: string): void {
