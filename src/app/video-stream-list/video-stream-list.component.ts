@@ -120,6 +120,10 @@ export class VideoStreamListComponent implements OnInit {
     ]
   }
 
+  fetchData($event) {
+    console.log($event, 'kjbvksj')
+  }
+
   endState() {
     this.showVideoPopupContainer = true;
   }

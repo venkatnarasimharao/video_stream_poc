@@ -1,5 +1,5 @@
 <div class="container">
-  <app-sidenav>
+  <app-sidenav (change)="fetchData($event)">
   </app-sidenav>
   <div class="video-grid">
     <div class="video-item" (click)="playVideo(true, video)" *ngFor="let video of videoList">

@@ -1,35 +1,39 @@
 <div class="side-menu">
-    <nav class="navbar-default">
-      <ul>
-        <li><span>Home</span></li>
-        <li (click)="saveVideoStream(VIDEO_STREAM_DATA, 'All'); toggleExpand('All')">
-          <span>All</span>
-          <i class="fa fa-chevron-right pull-right icon-default"></i>
-        </li>
-        <li *ngFor="let firstLevelObj of VIDEO_STREAM_DATA; let i = index">
-          <ng-container *ngIf="firstLevelObj.key as firstLevelKey">
-            <div (click)="saveVideoStream(firstLevelObj, firstLevelKey) ; toggleExpand(firstLevelKey)">
-              <span>{{ firstLevelKey | replaceUnderscore }}</span>
+  <nav class="navbar-default">
+    <ul>
+      <li><span>Home</span></li>
+      <li (click)="saveVideoStream(videoData, 'All'); toggleExpand('All')">
+        <span>All</span>
+        <i class="fa fa-chevron-right pull-right icon-default"></i>
+      </li>
+      <li *ngFor="let firstLevelObj of videoData; let i = index">
+        <ng-container *ngIf="firstLevelObj.key">
+          <div *ngIf="firstLevelObj?.items?.length && !firstLevelObj?.items[0].path" (click)="toggleExpand(firstLevelObj.key)">
+            <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
+            <i class="fa fa-chevron-right pull-right icon-default"></i>
+          </div>
+          <div *ngIf="firstLevelObj?.items?.length && firstLevelObj?.items[0].path" (click)="saveVideoStream(firstLevelObj, firstLevelObj.key) ; toggleExpand(firstLevelObj.key)">
+            <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
+            <i class="fa fa-chevron-right pull-right icon-default"></i>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="expandedKey === firstLevelObj.key && firstLevelObj?.items?.length && !firstLevelObj?.items[0].path">
+          <ul class="secondLevel-default">
+            <li (click)="saveVideoStream(firstLevelObj, 'All')">
+              <span>All</span>
               <i class="fa fa-chevron-right pull-right icon-default"></i>
-            </div>
-          </ng-container>
-          <ng-container *ngIf="expandedKey === firstLevelObj.key && hasSubItems(firstLevelObj)">
-            <ul class="secondLevel-default">
-              <li (click)="saveVideoStream(firstLevelObj, 'All')">
-                <span>All</span>
-                <i class="fa fa-chevron-right pull-right icon-default"></i>
-              </li>
-              <li *ngFor="let secondLevelObj of firstLevelObj.items">
-                <ng-container *ngIf="secondLevelObj.key as secondLevelKey">
-                  <div (click)="saveVideoStream(secondLevelObj, secondLevelKey)">
-                    <span>{{ secondLevelKey | replaceUnderscore }}</span>
-                    <i class="fa fa-chevron-right pull-right icon-default"></i>
-                  </div>
-                </ng-container>
-              </li>
-            </ul>
-          </ng-container>
-        </li>
-      </ul>
-    </nav>
-  </div>
+            </li>
+            <li *ngFor="let secondLevelObj of firstLevelObj.items">
+              <ng-container *ngIf="secondLevelObj.key">
+                <div (click)="saveVideoStream(secondLevelObj, secondLevelObj.key)">
+                  <span>{{ secondLevelObj.key | replaceUnderscore }}</span>
+                  <i class="fa fa-chevron-right pull-right icon-default"></i>
+                </div>
+              </ng-container>
+            </li>
+          </ul>
+        </ng-container>
+      </li>
+    </ul>
+  </nav>
+</div>
