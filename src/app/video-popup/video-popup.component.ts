@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 export class VideoPopupComponent implements OnInit, OnChanges {
 
   @Output() closePopup = new EventEmitter();
-  @Input() videoSrc: any = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/rom/rom.mp4';
+  @Input() videoSrc: any = 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATAhttps://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4';
   @Input() heading: any = 'Videos';
 
   ngOnInit(): void {

@@ -32,7 +32,7 @@ export class SidenavComponent implements OnInit {
   }
 
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
-    if (key) {
+    if (key === 'All') {
       const data = {
         value: 'all',
         videoData: dataSet
