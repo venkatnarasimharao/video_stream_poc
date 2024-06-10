@@ -121,6 +121,11 @@ export class VideoStreamListComponent implements OnInit {
   }
 
   fetchData($event) {
+    if ($event === 'all') {
+
+    } else {
+
+    }
     console.log($event, 'kjbvksj')
   }
 
@@ -134,6 +139,10 @@ export class VideoStreamListComponent implements OnInit {
     }
     this.showVideoPopup = value;
 
+  }
+
+  showAllData() {
+    
   }
   
 }

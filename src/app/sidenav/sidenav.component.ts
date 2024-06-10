@@ -24,6 +24,7 @@ export class SidenavComponent implements OnInit {
 
   async ngOnInit() {
     this.videoData = await this.s3Service.getVideoUrl();
+    this.change.emit('all');
   }
 
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
