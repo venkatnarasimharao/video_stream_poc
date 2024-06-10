@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VideoMainContainerComponent } from './video-main-container/video-main-container.component';
+import { VideoStreamListComponent } from './video-stream-list/video-stream-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: VideoMainContainerComponent,
+    component: VideoStreamListComponent,
     // canActivate: [AuthGuard]
   },
   // {

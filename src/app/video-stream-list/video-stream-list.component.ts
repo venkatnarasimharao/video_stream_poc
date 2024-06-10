@@ -1,5 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-video-stream-list',
@@ -55,72 +56,21 @@ export class VideoStreamListComponent implements OnInit {
   videoData: any = {};
   // https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4
   
+  // Pagination code
+  itemsPerPage = 10;
+  currentPage = 1;
+  filter:any;
+
+  constructor(private route: ActivatedRoute) { }
+
   ngOnInit(): void {
-    // this.videoList = [
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    //   {
-    //     name: 'Asian Blepharoplasty',
-    //     videoSrc: 'assets/img.jpg',
-    //     videoUrl: 'https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4'
-    //   },
-    // ]
+    this.route.params.subscribe(params => {
+      console.log(params, 'check this')
+    });
   }
 
   fetchData($event) {
+    this.filter = $event?.value
     if ($event?.value === 'all') {
       this.videoList = [];
       this.showAllData($event.videoData);
@@ -149,6 +99,17 @@ export class VideoStreamListComponent implements OnInit {
         this.showAllData(item.items);
       }
     });
+    const val = this.paginatedData
+    console.log(val, 'chhhchc')
   }
-  
+
+  get paginatedData() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+
+    return this.videoList.slice(start, end);
+  }
+  changePage(page: number) {
+    this.currentPage = page;
+  }
 }
