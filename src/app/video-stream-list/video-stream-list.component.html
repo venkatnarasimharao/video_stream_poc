@@ -4,7 +4,7 @@
     <app-sidenav (change)="fetchData($event)">
     </app-sidenav>
     <div class="video-grid">
-      <div class="video-item" (click)="playVideo(true, video)" *ngFor="let video of videoList">
+      <div class="video-item" (click)="playVideo(true, video)" *ngFor="let video of videoStreamData">
         <img src="assets/img.jpg" alt="" width="80%" height="85%">
         <a class="play-icon" href="javascript:void(0)" data-fancybox="gallery">
           <i class="far fa-play"></i>

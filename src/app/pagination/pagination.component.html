@@ -1,40 +1,17 @@
-<!-- <mat-paginator [length]="100"
-              [pageSize]="10"
-              [showFirstLastButtons]="true"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              [pageIndex]="currentPage"
-              (page)="handlePageEvent($event)"
-              >
-</mat-paginator> -->
-<!-- <nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === 1}">
-      <a class="page-link" (click)="pageClicked(currentPage-1)">Previous</a>
-    </li>
-    <li (click)="pageClicked(page)" *ngFor="let page of pages" class="page-item"
-      [ngClass]="{'active' : page == currentPage}">
-      <a class="page-link" href="#">{{page}}</a>
-    </li>
-    <li class="page-item" style="cursor: pointer;" [ngClass]="{disabled: currentPage === totalPages}">
-      <a class="page-link" (click)="pageClicked(currentPage + 1)">Next</a>
-    </li>
-  </ul>
-</nav> -->
+<ul class="page">
+  <li class="page__btn" (click)="pageClicked(1, 'begin')" [class.disabled]="currentPage === 1"><span class="material-icons">keyboard_double_arrow_left</span></li>
+  <li class="page__btn" (click)="pageClicked(currentPage - 1,  'begin')" [class.disabled]="currentPage === 1"><span class="material-icons">chevron_left</span></li>
+  <li class="page__numbers" *ngIf="visiblePages.length < totalPages && visiblePages[0] > 2" (click)="pageClicked(1)">{{ 1 }}</li>
+  
+  <li class="page__numbers" *ngIf="visiblePages.length < totalPages && visiblePages[0] > 2">...</li>
 
+  <li class="page__numbers" *ngFor="let page of visiblePages"
+      [ngClass]="{'active': page === currentPage}" (click)="pageClicked(page)">
+    {{ page }}
+  </li>
+  <li class="page__numbers" *ngIf="(visiblePages.length < totalPages) && totalPages !== currentPage">...</li>
+  <li class="page__numbers" *ngIf="(visiblePages.length < totalPages) && totalPages !== currentPage" (click)="pageClicked(totalPages)">{{ totalPages }}</li>
 
-<div id="app" class="container">
-  <ul class="page">
-    <li class="page__btn active" (click)="pageClicked(1)"><span class="material-icons">keyboard_double_arrow_left</span></li>
-    <li class="page__btn active" (click)="pageClicked(currentPage-1)"><span class="material-icons">chevron_left</span>
-    </li>
-    <li class="page__numbers" (click)="pageClicked(page)" *ngFor="let page of pages"
-      [ngClass]="{'active' : page == currentPage}">
-      {{page}}
-    </li>
-    <li class="page__numbers">
-      ...
-    </li>
-    <li class="page__btn" (click)="pageClicked(currentPage+1)"><span class="material-icons">chevron_right</span></li>
-    <li class="page__btn" (click)="pageClicked(totalPages)"><span class="material-icons">keyboard_double_arrow_right</span></li>
-  </ul>
-</div>
+  <li class="page__btn" (click)="pageClicked(currentPage + 1, 'end')" [class.disabled]="currentPage === totalPages"><span class="material-icons">chevron_right</span></li>
+  <li class="page__btn" (click)="pageClicked(totalPages, 'end')" [class.disabled]="currentPage === totalPages"><span class="material-icons">keyboard_double_arrow_right</span></li>
+</ul>

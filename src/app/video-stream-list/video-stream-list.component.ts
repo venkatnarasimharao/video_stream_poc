@@ -51,13 +51,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VideoStreamListComponent implements OnInit {
   videoList: any = [];
+  videoStreamData: any = [];
   showVideoPopup: boolean = false;
   showVideoPopupContainer: boolean = false;
   videoData: any = {};
   // https://d3ngc5oa7eval3.cloudfront.net/VIDEO_STEAM_DATA/Agarwal_Advanced/SECTION_I_OCULOPLASTY_AND_ORBIT/Asian_Blepharoplasty/master.mp4
   
   // Pagination code
-  itemsPerPage = 10;
+  itemsPerPage = 15;
   currentPage = 1;
   filter:any;
 
@@ -77,7 +78,7 @@ export class VideoStreamListComponent implements OnInit {
     } else {
       this.videoList = $event.items;
     }
-    console.log($event, 'kjbvksj')
+    this.videoStreamData = this.paginatedData
   }
 
   endState() {
@@ -100,8 +101,6 @@ export class VideoStreamListComponent implements OnInit {
         this.showAllData(item.items);
       }
     });
-    const val = this.paginatedData
-    console.log(val, 'chhhchc')
   }
 
   get paginatedData() {
@@ -112,5 +111,6 @@ export class VideoStreamListComponent implements OnInit {
   }
   changePage(page: number) {
     this.currentPage = page;
+    this.videoStreamData = this.paginatedData
   }
 }
