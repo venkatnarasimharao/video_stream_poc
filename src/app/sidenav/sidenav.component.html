@@ -5,24 +5,29 @@
         <span>All</span>
         <i class="fa fa-chevron-right pull-right icon-default"></i>
       </li>
-      <li *ngFor="let firstLevelObj of videoData; let i = index">
+      <li *ngFor="let firstLevelObj of videoData; let i = index"
+        [ngClass]="{'active': firstLevelObj.key === expandedKey}">
         <ng-container *ngIf="firstLevelObj.key">
-          <div *ngIf="firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length" (click)="toggleExpand(firstLevelObj.key)">
+          <div *ngIf="firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length"
+            (click)="toggleExpand(firstLevelObj.key)">
             <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
             <i class="fa fa-chevron-right pull-right icon-default"></i>
           </div>
-          <div *ngIf="firstLevelObj?.items?.length && !firstLevelObj?.items[0].items?.length" (click)="saveVideoStream(firstLevelObj, firstLevelObj.key) ; toggleExpand(firstLevelObj.key)">
+          <div *ngIf="firstLevelObj?.items?.length && !firstLevelObj?.items[0].items?.length"
+            (click)="saveVideoStream(firstLevelObj, firstLevelObj.key) ; toggleExpand(firstLevelObj.key)">
             <span>{{ firstLevelObj.key | replaceUnderscore }}</span>
             <i class="fa fa-chevron-right pull-right icon-default"></i>
           </div>
         </ng-container>
-        <ng-container *ngIf="expandedKey === firstLevelObj.key && firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length">
+        <ng-container
+          *ngIf="expandedKey === firstLevelObj.key && firstLevelObj?.items?.length && firstLevelObj?.items[0].items?.length">
           <ul class="secondLevel-default">
+            <!--  -->
             <li (click)="saveVideoStream(firstLevelObj.items, 'All')">
               <span>All</span>
               <i class="fa fa-chevron-right pull-right icon-default"></i>
             </li>
-            <li *ngFor="let secondLevelObj of firstLevelObj.items">
+            <li *ngFor="let secondLevelObj of firstLevelObj.items" [ngClass]="{'active': secondLevelObj.key === secondLevelKey}">
               <ng-container *ngIf="secondLevelObj.key">
                 <div (click)="saveVideoStream(secondLevelObj, secondLevelObj.key)">
                   <span>{{ secondLevelObj.key | replaceUnderscore }}</span>

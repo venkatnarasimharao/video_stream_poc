@@ -44,6 +44,7 @@
             padding: 10px;
             border-radius: 4px;
 
+            &.active,
             &:hover {
                 background-color: #a7cded;
                 text-decoration: none;
@@ -56,6 +57,12 @@
     .secondLevel-default {
         &:hover {
             color: #084a63;
+        }
+
+        .active {
+            background-color: #a7cded;
+            text-decoration: none;
+            color: #fff;
         }
     }
 

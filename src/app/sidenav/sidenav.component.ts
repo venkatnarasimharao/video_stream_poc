@@ -17,6 +17,7 @@ interface VideoItem {
 export class SidenavComponent implements OnInit {
   videoData: VideoItem[];
   expandedKey: string | null = null;
+  secondLevelKey: string | null = null;
   @Output() change = new EventEmitter();
 
   constructor(private s3Service: S3CommonService) { }
@@ -37,6 +38,7 @@ export class SidenavComponent implements OnInit {
   }
 
   saveVideoStream(dataSet: VideoItem | VideoItem[], key:string): void {
+    this.secondLevelKey = key
     if (key === 'All') {
       const data = {
         value: 'all',
