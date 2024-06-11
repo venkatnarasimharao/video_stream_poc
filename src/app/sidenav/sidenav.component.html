@@ -2,7 +2,7 @@
   <nav class="navbar-default">
     <ul>
       <li (click)="saveVideoStream(videoData, 'All'); toggleExpand('All')" 
-      [ngClass]="{'active': ('All' === expandedKey || !expandedKey)}">
+      [ngClass]="{'active': ('All' === expandedKey)}">
         <span>All</span>
         <i class="pull-right icon-default"></i>
       </li>

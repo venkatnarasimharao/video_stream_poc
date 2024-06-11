@@ -16,7 +16,7 @@ interface VideoItem {
 })
 export class SidenavComponent implements OnInit {
   videoData: VideoItem[];
-  expandedKey: string | null = null;
+  expandedKey: string | null = 'All';
   secondLevelKey: string | null = null;
   @Output() change = new EventEmitter();
 
@@ -28,6 +28,7 @@ export class SidenavComponent implements OnInit {
     if (sessionStorage.getItem('activeData')) {
       const data = JSON.parse(sessionStorage.getItem('activeData'));
       this.expandedKey = data.expandedKey;
+      this.secondLevelKey = data.expandedKey;
       this.change.emit(data.data);
     } else {
       const data = {
