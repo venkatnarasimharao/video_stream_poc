@@ -72,6 +72,7 @@ export class VideoStreamListComponent implements OnInit {
 
   fetchData($event) {
     this.filter = $event?.value
+    this.currentPage = 1
     if ($event?.value === 'all') {
       this.videoList = [];
       this.showAllData($event.videoData);
