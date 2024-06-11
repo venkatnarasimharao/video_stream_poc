@@ -27,7 +27,8 @@ export class SidenavComponent implements OnInit {
     this.videoData = await this.s3Service.getVideoUrl();
     if (sessionStorage.getItem('activeData')) {
       const data = JSON.parse(sessionStorage.getItem('activeData'));
-      this.change.emit(data);
+      this.expandedKey = data.expandedKey;
+      this.change.emit(data.data);
     } else {
       const data = {
         value: 'all',
@@ -44,10 +45,16 @@ export class SidenavComponent implements OnInit {
         value: 'all',
         videoData: dataSet
       }
-      sessionStorage.setItem('activeData', JSON.stringify(data));
+      sessionStorage.setItem('activeData', JSON.stringify({
+        expandedKey: key,
+        data
+      }));
       this.change.emit(data);
     } else {
-      sessionStorage.setItem('activeData', JSON.stringify(dataSet))
+      sessionStorage.setItem('activeData', JSON.stringify({
+        expandedKey: key,
+        data: dataSet
+      }));
       this.change.emit(dataSet);
     }
   }

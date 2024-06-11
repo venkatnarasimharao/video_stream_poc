@@ -3,8 +3,10 @@
 }
 
 .video-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 30%);
+    grid-gap: 1rem;
+    justify-content: space-around;
     margin-left: 22%;
     margin-top: 5%;
 
@@ -17,6 +19,7 @@
             height: 80%;
             width: 90%;
             object-fit: cover;
+            opacity: 0.8;
         }
 
         .play-icon {
@@ -29,7 +32,7 @@
             text-align: center;
             font-size: 24px;
             top: 39%;
-            left: 48%;        
+            left: 48%;
             transform: translate(-50%, -50%);
             cursor: pointer;
             border-radius: 100%;
